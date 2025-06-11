@@ -27,7 +27,6 @@ OCVF stores structured data instead of presentation, so both humans and machines
 -------------------------------------------------------------------------------
 
 ## ARCHITECTURE OVERVIEW
-
 (**ocvf-core** ⟶ Rust encoder/decoder + CLI)
 (**Python backend** ⟶ FastAPI + WebSocket)
 (**Web frontend** ⟶ Vue or React interface)
@@ -42,14 +41,14 @@ OCVF stores structured data instead of presentation, so both humans and machines
 - Python 3.10 or newer
 - Node.js / npm for web tools
 
-**Istallation**
+**Istallation [Not implemented yet]**
 ```sh
 cargo install ocvf-core          # Rust encoder/decoder
 pip install ocvf                 # Python CLI and bindings
 npm install -g ocvf-js           # JavaScript / WASM bindings
 ```
 
-**Common commands**
+**Common commands [Not ready yet]**
 ```sh
 ocvf encode resume.json -o resume.ocvf
 ocvf validate resume.ocvf
@@ -60,6 +59,7 @@ ocvf rank resume.ocvf --filters filters.json --explain
 -------------------------------------------------------------------------------
 
 ## REPOSITORY LAYOUT
+
 ```
 core/...............# Rust crate
 bindings/py/........# Python bindings and CLI
