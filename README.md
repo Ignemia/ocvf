@@ -37,19 +37,19 @@ OCVF stores structured data instead of presentation, so both humans and machines
 
 ## QUICK START
 
-*Prerequisites*
+**Prerequisites**
 - Rust 1.78 or newer
 - Python 3.10 or newer
 - Node.js / npm for web tools
 
-*Istallation*
+**Istallation**
 ```sh
 cargo install ocvf-core          # Rust encoder/decoder
 pip install ocvf                 # Python CLI and bindings
 npm install -g ocvf-js           # JavaScript / WASM bindings
 ```
 
-*Common commands*
+**Common commands**
 ```sh
 ocvf encode resume.json -o resume.ocvf
 ocvf validate resume.ocvf
