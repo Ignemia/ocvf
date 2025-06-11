@@ -1,4 +1,4 @@
-# OCVF – Open Curriculum Vitae File
+# OCVF – Open Curriculum Vitae File Format
 
 > OCVF is an open, binary-encoded résumé format designed for reliable parsing, multilingual content, and easy export to PDF, HTML, or JSON. Write your information once, generate any layout you need, and let software handle the rest.
 
@@ -10,7 +10,7 @@
 * Job seekers retype the same data for every application.
 * Recruiters lack a consistent, searchable database of candidates.
 
-> OCVF stores structured data instead of presentation, so both humans and machines share a single, loss-free source of truth.
+OCVF stores structured data instead of presentation, so both humans and machines share a single, loss-free source of truth.
 
 -------------------------------------------------------------------------------
 
@@ -28,10 +28,10 @@
 
 ## ARCHITECTURE OVERVIEW
 
-(ocvf-core ⟶ Rust encoder/decoder + CLI)
-(Python backend ⟶ FastAPI + WebSocket)
-(Web frontend ⟶ Vue or React interface)
-(Bindings ⟶ Python via pyo3, JS/WASM via wasm-pack)
+(**ocvf-core** ⟶ Rust encoder/decoder + CLI)
+(**Python backend** ⟶ FastAPI + WebSocket)
+(**Web frontend** ⟶ Vue or React interface)
+(**Bindings** ⟶ Python via pyo3, JS/WASM via wasm-pack)
 
 -------------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@
 *Prerequisites*
 - Rust 1.78 or newer
 - Python 3.10 or newer
-- Node.js \/ npm for web tools
+- Node.js / npm for web tools
 
 *Istallation*
 ```sh
@@ -59,14 +59,15 @@ npm install -g ocvf-js           # JavaScript / WASM bindings
 
 ## REPOSITORY LAYOUT
 ```
-core/      # Rust crate
-bindings/py/        # Python bindings and CLI
-bindings/js/        # JavaScript / WASM bindings
-web/       # Front-end client
-api/       # FastAPI backend
-docs/      # Specification and design notes
-examples/  # Sample .ocvf files, filters, themes
+core/...............# Rust crate
+bindings/py/........# Python bindings and CLI
+bindings/js/........# JavaScript / WASM bindings
+web/................# Front-end client
+api/................# FastAPI backend
+docs/...............# Specification and design notes
+examples/...........# Sample .ocvf files, filters, themes
 ```
+
 -------------------------------------------------------------------------------
 
 ## ROADMAP
