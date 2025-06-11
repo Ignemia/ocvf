@@ -50,10 +50,12 @@ npm install -g ocvf-js           # JavaScript / WASM bindings
 ```
 
 *Common commands*
-`ocvf encode resume.json -o resume.ocvf`
-`ocvf validate resume.ocvf`
-`ocvf export resume.ocvf --lang en --theme modern -o resume.pdf`
-`ocvf rank resume.ocvf --filters filters.json --explain`
+```sh
+ocvf encode resume.json -o resume.ocvf
+ocvf validate resume.ocvf
+ocvf export resume.ocvf --lang en --theme modern -o resume.pdf
+ocvf rank resume.ocvf --filters filters.json --explain
+```
 
 -------------------------------------------------------------------------------
 
