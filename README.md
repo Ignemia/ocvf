@@ -1,54 +1,64 @@
 # OCVF – Open Curriculum Vitae File Format
 
-> OCVF is an open, binary-encoded résumé format designed for reliable parsing, multilingual content, and easy export to PDF, HTML, or JSON. Write your information once, generate any layout you need, and let software handle the rest.
+OCVF is an open, binary-encoded résumé format designed for reliable parsing, multilingual content, and easy export to PDF, HTML, or JSON. Write your information once, generate any layout you need, and let software handle the rest.
 
--------------------------------------------------------------------------------
+---
 
-## WHY OCVF?
+## Why OCVF?
 
-* Existing PDF\/DOCX résumés break automated parsers.
-* Job seekers retype the same data for every application.
-* Recruiters lack a consistent, searchable database of candidates.
+- **Automated and Reliable Parsing:** Avoid inconsistent layouts with traditional PDF/DOCX résumés.
+- **Data Consistency:** Eliminate repetitive data entry—update once, apply everywhere.
+- **Searchable and Structured:** Store information as structured data for seamless integration with automated systems.
 
-OCVF stores structured data instead of presentation, so both humans and machines share a single, loss-free source of truth.
+By separating content from presentation, OCVF provides a single, loss-free source of truth usable by both machines and humans.
 
--------------------------------------------------------------------------------
+---
 
-## KEY FEATURES
+## Key Features
 
-* Binary-compact core – Length-prefixed blocks for predictable parsing and small files
-* Multilingual fields – Each text value can include any number of language variants
-* Hashtag tagging – Inline #Python tags are extracted as structured skills; hashes are hidden in exports
-* Versioned schema – Every file declares its spec version; the encoder migrates older files automatically
-* CLI and SDKs – Rust core (ocvf-core), Python bindings (ocvf-py), JavaScript/WASM bindings (ocvf-js)
-* Search & rank – Filter thousands of files and score matches with a single command
-* Web formatter – Real-time editor that exports .ocvf, PDF, or HTML
+- **Binary-Compact Core:** Utilizes length-prefixed blocks for predictable parsing and small file sizes.
+- **Multilingual Support:** Each text field supports multiple language variants.
+- **Hashtag Tagging:** Inline hashtag skills (e.g., `#Python`) are extracted into structured tags; they remain hidden in exports.
+- **Versioned Schema:** Each file declares its specification version; older files are automatically migrated.
+- **Extensive Tooling:**
+  - **CLI and SDKs:** 
+    - Rust core (`ocvf-core`)
+    - Python bindings (`ocvf-py`)
+    - JavaScript/WASM bindings (`ocvf-js`)
+- **Smart Search & Ranking:** Filter and score thousands of files with a single command.
+- **Web Formatter:** Real-time editor that exports to .ocvf, PDF, or HTML.
 
--------------------------------------------------------------------------------
+---
 
-## ARCHITECTURE OVERVIEW
-(**ocvf-core** ⟶ Rust encoder/decoder + CLI)
-(**Python backend** ⟶ FastAPI + WebSocket)
-(**Web frontend** ⟶ Vue or React interface)
-(**Bindings** ⟶ Python via pyo3, JS/WASM via wasm-pack)
+## Architecture Overview
 
--------------------------------------------------------------------------------
+- **ocvf-core:** Rust-based encoder/decoder and CLI.
+- **Python Backend:** FastAPI coupled with WebSocket for seamless server communication.
+- **Web Frontend:** Built using Vue or React for an intuitive interface.
+- **Bindings:** 
+  - Python integration via pyo3.
+  - JavaScript/WASM integration via wasm-pack.
 
-## QUICK START
+---
 
-**Prerequisites**
-- Rust 1.78 or newer
-- Python 3.10 or newer
-- Node.js / npm for web tools
+## Quick Start
 
-**Istallation [Not implemented yet]**
+### Prerequisites
+
+- **Rust:** Version 1.78 or newer.
+- **Python:** Version 3.10 or newer.
+- **Node.js/npm:** Required for web tooling.
+
+### Installation *(Not implemented yet)*
+
 ```sh
 cargo install ocvf-core          # Rust encoder/decoder
 pip install ocvf                 # Python CLI and bindings
-npm install -g ocvf-js           # JavaScript / WASM bindings
+npm install -g ocvf-js           # JavaScript/WASM bindings
 ```
 
-**Common commands [Not ready yet]**
+### Common Commands *(Not ready yet)*
+
 ```sh
 ocvf encode resume.json -o resume.ocvf
 ocvf validate resume.ocvf
@@ -56,36 +66,38 @@ ocvf export resume.ocvf --lang en --theme modern -o resume.pdf
 ocvf rank resume.ocvf --filters filters.json --explain
 ```
 
--------------------------------------------------------------------------------
+---
 
-## REPOSITORY LAYOUT
+## Repository Layout
 
-```
-core/...............# Rust crate
-bindings/py/........# Python bindings and CLI
-bindings/js/........# JavaScript / WASM bindings
-web/................# Front-end client
-api/................# FastAPI backend
-docs/...............# Specification and design notes
-examples/...........# Sample .ocvf files, filters, themes
-```
+- **core/** – Rust crate
+- **bindings/py/** – Python bindings and CLI
+- **bindings/js/** – JavaScript/WASM bindings
+- **web/** – Front-end client
+- **api/** – FastAPI backend
+- **docs/** – Specification and design notes
+- **examples/** – Sample .ocvf files, filters, and themes
 
--------------------------------------------------------------------------------
+---
 
-## ROADMAP
+## Roadmap
 
-1. Publish spec v0.1 and reference Rust implementation
-2. Release Python and JS\/WASM bindings
-3. Deliver CLI \(encode, decode, validate, export, rank\)
-4. Launch web formatter with real-time preview
-5. Add search server and .well-known\/ocvf discovery endpoint
-6. Provide VS Code and Word plugins
-7. Pilot ATS and LinkedIn integrations
+1. Publish specification v0.1 along with a reference Rust implementation.
+2. Release Python and JavaScript/WASM bindings.
+3. Deliver the CLI featuring encode, decode, validate, export, and rank commands.
+4. Launch the web formatter with real-time preview capabilities.
+5. Add a search server and a dedicated `.well-known/ocvf` discovery endpoint.
+6. Provide plugins for VS Code and Microsoft Word.
+7. Pilot integrations with ATS systems and LinkedIn.
 
--------------------------------------------------------------------------------
+---
 
-## CONTRIBUTING
+## Contributing
 
-1. Fork the repository and create a feature branch.
-2. Run tests \(cargo test, pytest, npm test\) before opening a pull request.
-3. Follow the style guidelines in CONTRIBUTING.md.
+1. **Fork the Repository:** Create your feature branch.
+2. **Testing:** Run tests (`cargo test`, `pytest`, `npm test`) before opening a pull request.
+3. **Style Guidelines:** Follow the instructions in `CONTRIBUTING.md` for code standards and best practices.
+
+Contributions are welcome! Please ensure you follow the guidelines and write clear, concise commit messages.
+
+Happy Coding!
