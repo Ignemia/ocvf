@@ -21,7 +21,7 @@ By separating content from presentation, OCVF provides a single, loss-free sourc
 - **Hashtag Tagging:** Inline hashtag skills (e.g., `#Python`) are extracted into structured tags; they remain hidden in exports.
 - **Versioned Schema:** Each file declares its specification version; older files are automatically migrated.
 - **Extensive Tooling:**
-  - **CLI and SDKs:** 
+  - **CLI and SDKs:**
     - Rust core (`ocvf-core`)
     - Python bindings (`ocvf-py`)
     - JavaScript/WASM bindings (`ocvf-js`)
@@ -35,7 +35,7 @@ By separating content from presentation, OCVF provides a single, loss-free sourc
 - **ocvf-core:** Rust-based encoder/decoder and CLI.
 - **Python Backend:** FastAPI coupled with WebSocket for seamless server communication.
 - **Web Frontend:** Built using Vue or React for an intuitive interface.
-- **Bindings:** 
+- **Bindings:**
   - Python integration via pyo3.
   - JavaScript/WASM integration via wasm-pack.
 
@@ -89,15 +89,3 @@ ocvf rank resume.ocvf --filters filters.json --explain
 5. Add a search server and a dedicated `.well-known/ocvf` discovery endpoint.
 6. Provide plugins for VS Code and Microsoft Word.
 7. Pilot integrations with ATS systems and LinkedIn.
-
----
-
-## Contributing
-
-1. **Fork the Repository:** Create your feature branch.
-2. **Testing:** Run tests (`cargo test`, `pytest`, `npm test`) before opening a pull request.
-3. **Style Guidelines:** Follow the instructions in `CONTRIBUTING.md` for code standards and best practices.
-
-Contributions are welcome! Please ensure you follow the guidelines and write clear, concise commit messages.
-
-Happy Coding!
